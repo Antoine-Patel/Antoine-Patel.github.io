@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>{% if page.title %}{{ page.title }} - {% endif %} Antoine Patel's website</title>
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+    {% endif %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    {% if site.feedburner %}
+
+    <link href="http://feeds.feedburner.com/{{ site.feedburner.id }}"
+    rel="alternate" title="{{ site.title }}"
+    type="application/atom+xml" />
+
+    {% endif %}
+  </head>
+
+  <body>
+
+      <div id="header">
+        <nav>
+          <li>
+	    <a href="https://github.com/Antoine-Patel">
+	      View On GitHub
+	    </a>
+	  </li>
+	  {% for page in site.html_pages %}
+	    {% if page.title %}
+	      <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+	    {% endif %}
+	  {% endfor %}
+	</nav>
+      </div><!-- end header -->
+
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+
+          <h1>Antoine Patel's website.</h1>
+          <hr>
+
+          {% if page.title %}<h2>{{ page.title }}</h2>{{ site.title }}{% endif %}
+
+        </div>
+
+        {{ content }}
+
+      </section>
+
+    </div>
+
+  </body>
+</html>
