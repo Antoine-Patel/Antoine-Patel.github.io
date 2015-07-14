@@ -35,13 +35,18 @@
 
       <div id="header">
         <nav>
+	  <li class="brand-logo">
+	    <a href="." class="brand-link">
+	      Antoine Patel
+	    </a>
+	  </li>
           <!-- <li> -->
 	  <!--   <a href="https://github.com/Antoine-Patel"> -->
 	  <!--     My GitHub profile -->
 	  <!--   </a> -->
 	  <!-- </li> -->
 	  {% for page in site.html_pages %}
-	    {% if page.title %}
+	    {% if page.title and page.title != "Antoine Patel's website" %}
 	      <li><a href="{{ page.url }}">{{ page.title }}</a></li>
 	    {% endif %}
 	  {% endfor %}
@@ -54,10 +59,7 @@
       <section>
         <div id="title">
 
-          <h1>Antoine Patel's website.</h1>
-          <hr>
-
-          {% if page.title %}<h2>{{ page.title }}</h2>{{ site.title }}{% endif %}
+          {% if page.title %}<h1>{{ page.title }}</h1><hr>{% endif %}
 
         </div>
 

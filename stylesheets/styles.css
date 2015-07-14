@@ -68,6 +68,27 @@
   -webkit-font-smoothing: antialiased;
 }
 
+#header nav li.brand-logo {
+  list-style: none;
+  display: inline;
+  margin-right: 1em;
+  font-family: 'OpenSansBold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 50px;
+  font-size: 20px;  
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+#header nav li a.brand-link {
+
+  color: rgb( 228, 228, 228);
+  padding: 10px 12px;
+  margin-top: 6px;
+  line-height: 14px;
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+}
+
 /* normalize.css 2012-02-07T12:37 UTC - https://github.com/necolas/normalize.css */
 /* =============================================================================
    HTML5 display definitions
@@ -715,7 +736,7 @@ dt {
   background: rgb(82, 82, 82);
   /*margin: 6px auto;*/
 }
-#header nav li {
+#header nav li:not( .brand-logo ) {
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   list-style: none;
@@ -725,7 +746,7 @@ dt {
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
   font-size: 14px;
 }
-#header nav li a {
+#header nav li a:not( .brand-link ) {
   color: rgb( 45, 34, 20);
   border: 1px solid #91480b;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d5a200), color-stop(100%, #c09900));
@@ -752,7 +773,7 @@ dt {
   display: inline-block;
   text-align: center;
 }
-#header nav li a:hover {
+#header nav li a:hover:not( .brand-link ) {
   color: white;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #986800), color-stop(100%, #c76200));
   background: -webkit-linear-gradient(#986800, #c76200);
